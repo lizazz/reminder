@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Интернет-магазин электротехники www.eleksun.com.ua - Вы довольны сервисом?</title>
+</head>
+<body style="background-color: #dce1e5">
+    <div style="width: 100%; background-color: #207499; height: 80px;padding-left:50px">
+        <table>
+            <tr style="color:#ffd84a">
+                <td style="width: 30%">
+                    <a href="https://eleksun.com.ua" title="Интернет-магазин электрооборудования Eleksun" rel="home" id="logo">
+                        <img src="https://eleksun.com.ua/sites/all/themes/eleksun/logo.png" alt="Интернет-магазин электрооборудования Eleksun" title="Интернет-магазин электрооборудования Eleksun">
+                    </a>
+                </td>
+
+                <td style="padding-left:50px">099-428-33-17<br>098-564-65-57</td>
+                <td></td>
+                <td >График работы 9-18 / пн-пт</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="padding-left:50px">
+        <p>Добрый день</p>
+        <p>
+            Вы делали заказ № ' . $orderId .' в нашем интернет-магазине <a href="https://eleksun.com.ua">www.eleksun.com.ua</a>.
+        </p>
+        <p>
+            Нам было бы интересно узнать Ваше мнение о нашем товаре или об уровне сервиса и мы бы хотели Вас попросить оставить отзыв.
+        </p>
+        <p>
+            Вы можете оставить отзыв об купленном товаре
+        </p>
+        <table style="border-collapse: collapse;">
+            <tr>
+                <th style="padding: 3px; border: 1px solid black;">Код</th>
+                <th style="padding: 3px; border: 1px solid black;">Наименование</th>
+            </tr>';
+
+            foreach ($order['products'] as $product) {
+            $message .= '
+            <tr>
+                <td style="padding: 3px; border: 1px solid black;">' . $product["sku"] . '</td>
+                <td style="padding: 3px; border: 1px solid black;"><a href="' . $product["url"] . '">' . /*iconv( 'utf-8', 'cp1251',*/ $product["title"]/*) */. '</a></td>
+            </tr>';
+            }
+
+            $message .= '</table>
+
+        <p>
+            или об опыте работы с нами  на <a href="https://www.google.com.ua/search?q=eleksun&oq=eleksun&aqs=chrome..69i57j69i60l4j69i65.4023j0j7&sourceid=chrome&ie=UTF-8#lrd=0x4127a08c9fb72c89:0x1face26daadbe1e4,3,,,">google.maps</a>.
+        </p>
+        <p>
+            В качестве благодарности мы готовы Вам предоставить скидку в размере 5% на следующую покупку.
+        </p>
+        <p>
+            Для получения скидки Вам необходимо упомянуть об отзыве и дать ссылку на страницу с ним при следующем заказе
+        </p>
+    </div>
+    <div style="  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;background-color: #aeb5bb;" class="footer"></div>
+</body>
+</html>
